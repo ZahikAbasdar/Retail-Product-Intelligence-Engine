@@ -77,23 +77,11 @@ const Index = () => {
                 className="space-y-8"
               >
                 <motion.div
-                  initial={{ opacity: 0, x: -100, rotateY: -20 }}
-                  animate={{ opacity: 1, x: 0, rotateY: 0 }}
+                  initial={{ opacity: 0, x: -100 }}
+                  animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1, ease: "easeOut" }}
-                  className="space-y-4"
+                  className="space-y-8"
                 >
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-                    className="inline-block"
-                  >
-                    <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 border-2 border-primary/30 backdrop-blur-sm">
-                      <Sparkles className="h-5 w-5 text-primary animate-pulse" />
-                      <span className="text-sm font-bold text-foreground">Intelligence Platform</span>
-                    </div>
-                  </motion.div>
-
                   <h1 className="text-6xl md:text-8xl font-black leading-tight">
                     <motion.span 
                       className="block bg-gradient-to-r from-primary via-destructive to-primary bg-clip-text text-transparent"
@@ -149,18 +137,19 @@ const Index = () => {
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className="relative h-[600px] hidden lg:block"
+                className="relative h-[600px] hidden lg:block perspective-1000"
               >
                 {[0, 1, 2].map((index) => (
                   <motion.div
                     key={index}
                     className="absolute inset-0 bg-gradient-to-br from-card to-card/50 backdrop-blur-xl border-2 border-primary/20 rounded-3xl shadow-2xl"
-                    style={{
-                      transform: `translateZ(${index * 20}px) rotateY(${index * 5}deg) translateX(${index * 20}px)`,
+                    initial={{
+                      rotateY: index * 5,
+                      x: index * 20,
                     }}
                     animate={{
                       rotateY: [index * 5, index * 5 + 10, index * 5],
-                      translateX: [index * 20, index * 20 + 10, index * 20],
+                      x: [index * 20, index * 20 + 10, index * 20],
                     }}
                     transition={{
                       duration: 5,
