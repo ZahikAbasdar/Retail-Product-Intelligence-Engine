@@ -62,6 +62,30 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        xl: "1.25rem",
+        "2xl": "1.5rem",
+        "3xl": "2rem",
+      },
+      boxShadow: {
+        'sm': 'var(--shadow-sm)',
+        'DEFAULT': 'var(--shadow)',
+        'lg': 'var(--shadow-lg)',
+        'xl': 'var(--shadow-xl)',
+        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.08)',
+        'glow': '0 0 40px rgba(var(--primary) / 0.3)',
+      },
+      fontFamily: {
+        sans: ['var(--font-system)', 'ui-sans-serif', 'system-ui'],
+      },
+      letterSpacing: {
+        tighter: '-0.04em',
+        tight: '-0.02em',
+        normal: '0',
+        wide: '0.02em',
+      },
+      lineHeight: {
+        'extra-tight': '1.1',
+        'tight': '1.25',
       },
       keyframes: {
         "accordion-down": {
